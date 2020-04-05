@@ -1,12 +1,11 @@
 [Unit]
-Description = The simplest ruby applicaiton running with rackup
+Description = Simple sinatra app
 
 [Service]
 Environment = PATH=<%= path %>
 WorkingDirectory = <%= application_directory %>
 Type = simple
-ExecStart = <%= bundle_path %> exec rackup -o 0.0.0.0 config.ru
+ExecStart = <%= bundle_path %> exec ruby app.rb
 
 [Install]
 WantedBy = multi-user.target
-
