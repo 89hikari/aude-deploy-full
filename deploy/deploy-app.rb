@@ -145,7 +145,7 @@ end
 
 if __FILE__ == $0
   if ARGV.length != 3
-    puts "We need exactly 3 agruments (user, 'host's IP', password)"
+    puts "We need exactly 3 agruments (user, host's IP, password)"
     exit
   end
   deployer = Deploy.new
