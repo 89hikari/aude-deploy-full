@@ -78,7 +78,6 @@ class Deploy
 
   def install_required_gems(application_directory)
     checked_run('sudo', File.join(ruby_installation_path, 'gem'), 'install', 'bundler')
-    checked_run('sudo', File.join(ruby_installation_path, 'bundle'), 'install')
     checked_run('sudo', File.join(ruby_installation_path, 'bundle'),
       'install', '--gemfile', File.join(application_directory, 'Gemfile'),
       '--jobs=4', '--retry=3'
@@ -150,5 +149,5 @@ if __FILE__ == $0
     exit
   end
   deployer = Deploy.new
-  deployer.deploy(ARGV[0], ARGV[1], ARGV[2])
+  deployer.deploy(ARGV[0], "#{ARGV[1]}", ARGV[2])
 end
